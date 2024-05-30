@@ -15,8 +15,8 @@ export const fonts = {
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Ecma-Screener",
-  description: "Built by ECMA team",
+  title: "Trend-Catcher",
+  description: "Built by 21MTechnicals",
 };
 
 export default function RootLayout({ children }) {

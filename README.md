@@ -58,4 +58,3 @@ Add instructions for contributing to your project, if applicable.
 Add information about the license of your project, if applicable.
 
 ---
-# ema-screener-fe-master

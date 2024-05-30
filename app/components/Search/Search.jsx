@@ -67,7 +67,7 @@ const Search = (props) => {
           },
         });
 
-        console.log(response.data.results, "res");
+        // console.log(response.data.results, "res");
         if (response.status == 200) {
           // console.log(response);
           props.setFilteredResults(response.data.results);
@@ -185,8 +185,6 @@ const Search = (props) => {
     }
   };
 
-  console.log(trend, "trend");
-
   return (
     <div className="my-[30px]">
       <div className="flex items-center justify-between w-[95%]  flex-wrap gap-4 mx-auto">
@@ -207,7 +205,7 @@ const Search = (props) => {
           >
             Search
           </Button>
-          <Tippy placement="bottom" content="Search through records">
+          <Tippy placement="bottom" content="Search through symbols">
             <span className="text-white cursor-pointer">
               {" "}
               <HiOutlineQuestionMarkCircle />
@@ -216,7 +214,7 @@ const Search = (props) => {
         </form>
 
         <div style={{ color: "#fff" }} className="flex items-center  gap-6">
-          <Tippy placement="bottom" content="Shows level of priority">
+          <Tippy placement="bottom" content="Shows probable trend">
             <Select
               p="0"
               m="0"
@@ -225,7 +223,7 @@ const Search = (props) => {
                 setWatchList(e.target.value);
               }}
               cursor="pointer"
-              placeholder="Select option"
+              placeholder="Select Probable Trend"
             >
               <option style={{ color: "#000", cursor: "pointer" }} value="A">
                 Positive Watch
@@ -351,7 +349,7 @@ const Search = (props) => {
             </Tippy>
           )}
 
-          <Tippy placement="bottom" content="Filter by trends">
+          <Tippy placement="bottom" content="Select Current Trend">
             <span className="text-white cursor-pointer">
               {" "}
               <HiOutlineQuestionMarkCircle />

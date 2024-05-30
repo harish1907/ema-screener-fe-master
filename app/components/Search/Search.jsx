@@ -57,10 +57,9 @@ const Search = (props) => {
     if (ApiKey) {
       try {
         // console.log(watchList, "watchlist");
-
         const response = await axios({
           method: "GET",
-          url: `${contextValue.base_url}/ema-records/?${emaTwenty}=${emaValue}&${emaFifty}=${emaValue}&${emaHundred}=${emaValue}&${emaTwoHundred}=${emaValue}&${closeHundred}=${emaValue}&currency=${currency}&trend=${trend}&watch=${watchList}&timeframe=${timeFrame}&category=${selectedCategory}&subcategory=${selectedSubCategory}`,
+          url: `${contextValue.base_url}/ema-records/?${emaTwenty}=${emaValue}&${emaFifty}=${emaValue}&${emaHundred}=${emaValue}&${emaTwoHundred}=${emaValue}&${closeHundred}=${emaValue}&currency=${currency}&watch=${watchList}&timeframe=${timeFrame}&category=${selectedCategory}&subcategory=${selectedSubCategory}&trend=${trend}`,
           headers: {
             "x-API-KEY": ApiKey,
             "Content-Type": "application/json",

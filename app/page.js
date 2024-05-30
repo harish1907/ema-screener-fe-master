@@ -10,16 +10,16 @@ import Paginate from "./components/paginate/Paginate";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1); // Initial page number
-  const [postsPerPage, setPostsPerPage] = useState(20);
+  const [postsPerPage, setPostsPerPage] = useState(100000);
   const [allEmaRecords, setAllEmaRecords] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredResults, setFilteredResults] = useState([]);
   const [filteredCategory, setFilteredCategory] = useState();
   const [filteredSubCategory, setFilteredSubCategory] = useState();
 
-  const handlePageClick = (page) => {
-    setCurrentPage(page);
-  };
+  // const handlePageClick = (page) => {
+  //   setCurrentPage(page);
+  // };
 
   useEffect(() => {
     let socket;
@@ -184,7 +184,7 @@ export default function Home() {
           filteredCategory={filteredCategory}
           filteredSubCategory={filteredSubCategory}
         />
-        {filteredResults.length > 1 ? (
+        {/* {filteredResults.length > 1 ? (
           <Paginate
             postsPerPage={postsPerPage}
             totalPosts={filteredResults.length}
@@ -193,7 +193,7 @@ export default function Home() {
           />
         ) : (
           ""
-        )}
+        )} */}
         <ToastContainer />
       </motion.div>
     </AnimatePresence>

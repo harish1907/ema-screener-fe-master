@@ -39,7 +39,7 @@ const Tabled = (props) => {
           </svg>
         </Box>
       ) : (
-        <TableContainer>
+        <TableContainer className="tablecontainer">
           <Table
             variant={props.allEmaRecords.length > 0 ? "striped" : "simple"}
             textAlign="center"

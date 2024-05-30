@@ -503,7 +503,7 @@ const Search = (props) => {
             )}
           </Popover>
 
-          <Tippy content="Filter all" placement="bottom">
+          {/* <Tippy content="Filter all" placement="bottom">
             <span
               onClick={getAllCurrencies}
               style={{ opacity: props.filteredResults?.length > 0 ? 0.7 : 1 }}
@@ -511,7 +511,7 @@ const Search = (props) => {
             >
               {<LuFilter color="white" cursor="pointer" />}{" "}
             </span>
-          </Tippy>
+          </Tippy> */}
         </Flex>
 
         <div

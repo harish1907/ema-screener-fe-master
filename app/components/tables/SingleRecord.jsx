@@ -11,7 +11,7 @@ import {
 
 const SingleRecord = (props) => {
   // console.log(props.emaRecords["ema20"], "ema 20");
-
+console.log('props.emaRecords', props.emaRecords)
   return (
     <Tr>
       <Td textAlign="center">{props.emaRecords.currency?.symbol}</Td>
@@ -142,7 +142,7 @@ const SingleRecord = (props) => {
           : !props.emaRecords["20>50"] &&
             !props.emaRecords["50>100"] &&
             !props.emaRecords["100>200"] &&
-            !props.emaRecords["close>100"] == false
+            !props.emaRecords["close>100"]
           ? "Strong Down"
           : !props.emaRecords["20>50"] &&
             !props.emaRecords["50>100"] &&

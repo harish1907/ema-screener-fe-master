@@ -11,7 +11,6 @@ import {
 
 const SingleRecord = (props) => {
   // console.log(props.emaRecords["ema20"], "ema 20");
-console.log('props.emaRecords', props.emaRecords)
   return (
     <Tr>
       <Td textAlign="center">{props.emaRecords.currency?.symbol}</Td>

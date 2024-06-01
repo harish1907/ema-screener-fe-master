@@ -16,7 +16,6 @@ export default function Home() {
   const [filteredResults, setFilteredResults] = useState([]);
   const [filteredCategory, setFilteredCategory] = useState();
   const [filteredSubCategory, setFilteredSubCategory] = useState();
-
   // const handlePageClick = (page) => {
   //   setCurrentPage(page);
   // };

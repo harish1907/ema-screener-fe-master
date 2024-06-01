@@ -29,9 +29,8 @@ import { LuFilter } from "react-icons/lu";
 
 const Search = (props) => {
   const { contextValue } = useAppContext();
-
-  const [timeFrame, setTimeFrame] = useState("00:15:00");
   const [currency, setCurrency] = useState("");
+  const [timeFrame, setTimeFrame] = useState("00:15:00");
   const [watchList, setWatchList] = useState("");
   const [emaValue, setEmaValue] = useState("");
   const [emaTwenty, setEmaTwenty] = useState("");
@@ -59,17 +58,34 @@ const Search = (props) => {
         // console.log(watchList, "watchlist");
         const response = await axios({
           method: "GET",
-          url: `${contextValue.base_url}/ema-records/?${emaTwenty}=${emaValue}&${emaFifty}=${emaValue}&${emaHundred}=${emaValue}&${emaTwoHundred}=${emaValue}&${closeHundred}=${emaValue}&currency=${currency}&watch=${watchList}&timeframe=${timeFrame}&category=${selectedCategory}&subcategory=${selectedSubCategory}&trend=${trend}`,
+          url: `${contextValue.base_url}/ema-records/`,
+          params: {
+            emaTwenty: emaValue,
+            emaFifty: emaValue,
+            emaHundred: emaValue,
+            emaTwoHundred: emaValue,
+            closeHundred: emaValue,
+            // currency: currency,
+            watch: watchList,
+            timeframe: timeFrame,
+            category: selectedCategory,
+            subcategory: selectedSubCategory,
+            trend: trend,
+          },
           headers: {
             "x-API-KEY": ApiKey,
             "Content-Type": "application/json",
           },
         });
-
         // console.log(response.data.results, "res");
         if (response.status == 200) {
-          // console.log(response);
-          props.setFilteredResults(response.data.results);
+          props.setFilteredResults(
+            currency && currency !== ""
+              ? response.data.results.filter((item) =>
+                  item?.currency?.symbol?.toUpperCase()?.includes(currency.toUpperCase())
+                )
+              : response.data.results
+          );
           props.setLoading(false);
         } else {
           console.log("An error has occurred");

@@ -447,6 +447,7 @@ const Search = (props) => {
               >
                 Sub Category
               </Button>
+              
             </PopoverTrigger>
             {closeSubCategoryModal && (
               <PopoverContent>
@@ -506,6 +507,17 @@ const Search = (props) => {
               </PopoverContent>
             )}
           </Popover>
+
+          <Button
+                onClick={() => window.location.reload()}
+                bgColor="#FF0000"
+                color="#fff"
+                colorScheme
+                className="rounded-[6px]"
+                opacity={props.filteredSubCategory?.length > 0 ? 0.7 : 1}
+              >
+                Reset
+              </Button>
 
           {/* <Tippy content="Filter all" placement="bottom">
             <span

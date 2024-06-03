@@ -58,7 +58,10 @@ const Search = (props) => {
         // console.log(watchList, "watchlist");
         const response = await axios({
           method: "GET",
-          url: `${contextValue.base_url}/ema-records/?emaTwenty=${emaValue}&emaFifty=${emaValue}&emaHundred=${emaValue}&emaTwoHundred=${emaValue}&closeHundred=${emaValue}&watch=${watchList}&timeframe=${timeFrame}&category=${`${selectedCategory === "Metals" ? "Metals & commodities" : selectedCategory}`}&subcategory=${selectedSubCategory}&trend=${trend}`,
+          url: `${contextValue.base_url}/ema-records/?emaTwenty=${emaValue}&emaFifty=${emaValue}&emaHundred=${emaValue}&emaTwoHundred=${emaValue}&closeHundred=${emaValue}&watch=${watchList}&timeframe=${timeFrame}&subcategory=${selectedSubCategory}&trend=${trend}`,
+          params: {
+            category: selectedCategory
+          },
           headers: {
             "x-API-KEY": ApiKey,
             "Content-Type": "application/json",
@@ -265,7 +268,7 @@ const Search = (props) => {
                 color="#fff"
                 className="rounded-[6px]"
                 onClick={() => {
-                  setTrend(" ");
+                  setTrend("");
                 }}
               >
                 Up{" "}
@@ -297,7 +300,7 @@ const Search = (props) => {
                 color="#fff"
                 className="rounded-[6px]"
                 onClick={() => {
-                  setTrend(" ");
+                  setTrend("");
                 }}
               >
                 Down{" "}
@@ -329,7 +332,7 @@ const Search = (props) => {
                 color="#fff"
                 className="rounded-[6px]"
                 onClick={() => {
-                  setTrend(" ");
+                  setTrend("");
                 }}
               >
                 Sideways{" "}

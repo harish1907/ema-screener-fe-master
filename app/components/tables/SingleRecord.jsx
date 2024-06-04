@@ -75,11 +75,13 @@ const SingleRecord = (props) => {
       </Td>
 
       <Td textAlign="center" style={{
-        color: Number(props.emaRecords?.close) > Number(props.emaRecords?.monhigh) ? "green" : "#000"
+        ...(Number(props.emaRecords?.close) > Number(props.emaRecords?.monhigh) ? { color: "green" } : {})
       }}>{props.emaRecords?.monhigh}</Td>
       <Td textAlign="center">{props.emaRecords?.monmid}</Td>
-      <Td textAlign="center" style={{
-        color: Number(props.emaRecords?.close) < Number(props.emaRecords?.monlow) ? "red" : "#000"
+      <Td textAlign="center"  style={{
+        ...(Number(props.emaRecords?.close) < Number(props.emaRecords?.monlow) && {
+          color: "red"
+        })
       }}>{props.emaRecords?.monlow}</Td>
       <Td textAlign="center">{props.emaRecords["ema20"]}</Td>
       <Td textAlign="center">{props.emaRecords["ema50"]}</Td>

@@ -137,7 +137,7 @@ const SingleRecord = (props) => {
           : props.emaRecords["20>50"] &&
             props.emaRecords["50>100"] &&
             props.emaRecords["100>200"] &&
-            !props.emaRecords["close>100 == true
+            !props.emaRecords["close>100"] == true
           ? "Up"
           : props.emaRecords["20>50"] &&
             props.emaRecords["50>100"] &&

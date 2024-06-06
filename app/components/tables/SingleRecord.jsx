@@ -75,7 +75,7 @@ const SingleRecord = (props) => {
       </Td>
 
       <Td textAlign="center" style={{
-        ...(Number(props.emaRecords?.close) > Number(props.emaRecords?.monhigh) ? { color: "green" } : {})
+        ...(Number(props.emaRecords?.close) > Number(props.emaRecords?.monhigh) && { color: "green" })
       }}>{props.emaRecords?.monhigh}</Td>
       <Td textAlign="center">{props.emaRecords?.monmid}</Td>
       <Td textAlign="center"  style={{
@@ -107,7 +107,7 @@ const SingleRecord = (props) => {
               <BsCircleFill color="#FF3131" />
             </span>
           )}
-          {props.emaRecords["100>200"] == true ? (
+          {props.emaRecords["close>100"] == true ? (
             <span>
               <BsCircleFill color="#66FF00" />
             </span>
@@ -116,7 +116,7 @@ const SingleRecord = (props) => {
               <BsCircleFill color="#FF3131" />
             </span>
           )}
-          {props.emaRecords["close>100"] == true ? (
+          {props.emaRecords["100>200"] == true ? (
             <span>
               <BsCircleFill color="#66FF00" />
             </span>

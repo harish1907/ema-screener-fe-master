@@ -131,33 +131,33 @@ const SingleRecord = (props) => {
       <Td textAlign="center">
         {props.emaRecords["20>50"] &&
         props.emaRecords["50>100"] &&
-        props.emaRecords["100>200"] &&
-        props.emaRecords["close>100"] == true
+        props.emaRecords["close>100"] &&
+        props.emaRecords["100>200"] == true
           ? "Strong Up"
           : props.emaRecords["20>50"] &&
             props.emaRecords["50>100"] &&
-            props.emaRecords["100>200"] &&
-            !props.emaRecords["close>100"] == true
+            props.emaRecords["close>100"] &&
+            !props.emaRecords["100>200"] == true
           ? "Up"
           : props.emaRecords["20>50"] &&
             props.emaRecords["50>100"] &&
-            !props.emaRecords["100>200"] &&
-            !props.emaRecords["close>100"]
+            !props.emaRecords["close>100"] &&
+            !props.emaRecords["100>200"]
           ? "Positive"
           : !props.emaRecords["20>50"] &&
             !props.emaRecords["50>100"] &&
-            !props.emaRecords["100>200"] &&
-            !props.emaRecords["close>100"]
+            !props.emaRecords["close>100"] &&
+            !props.emaRecords["100>200"]
           ? "Strong Down"
           : !props.emaRecords["20>50"] &&
             !props.emaRecords["50>100"] &&
-            !props.emaRecords["100>200"] &&
-            props.emaRecords["close>100"]
+            !props.emaRecords["close>100"] &&
+            props.emaRecords["100>200"]
           ? "Down"
           : !props.emaRecords["20>50"] &&
             !props.emaRecords["50>100"] &&
-            props.emaRecords["100>200"] &&
-            props.emaRecords["close>100"]
+            props.emaRecords["close>100"] &&
+            props.emaRecords["100>200"]
           ? "Negative"
           : "Sideways"}
       </Td>
